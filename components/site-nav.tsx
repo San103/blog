@@ -12,7 +12,7 @@ export function SiteNav() {
             className="mr-6 flex items-center space-x-2 font-medium text-lg tracking-tighter h-8 w-8 rounded-md overflow-hidden"
           >
             <img
-              src="/magicui-logo.png"
+              src="/jplogo.png"
               alt="Magic UI"
               className="w-10 h-10 object-cover"
             />
