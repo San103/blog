@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "San's Blog",
-  url: "https://blog-magicui.vercel.app",
+  url: "https://san-tech-blog.vercel.app",
   description:
     "Modern React and web development tutorials, insights, and best practices.",
 };
