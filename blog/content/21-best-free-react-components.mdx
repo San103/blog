@@ -1,0 +1,105 @@
+---
+title: "Deploy Next.js project on Github page"
+description: "Discover the most powerful and popular React component libraries that will accelerate your development workflow and help you build stunning UIs."
+date: "2025-10-24"
+tags: ["UI Frameworks", "React", "Components"]
+featured: true
+readTime: "16 min read"
+author: "arghya"
+thumbnail: "/thumbnails/react-components-libraries.jpg"
+---
+## Why Use Github page as Portfolio?
+
+Component libraries offer several advantages:
+
+- **Consistency**: Maintain a unified design language across your application
+- **Speed**: Rapid prototyping and development
+- **Accessibility**: Built-in accessibility features and best practices
+- **Customization**: Flexible theming and styling options
+
+## Github
+
+### 1. Go to Your Github Account
+Click on a plus(+) icon on the top right corner
+### 2. click on New Repository
+Name the Repository with your github username append with github.io
+
+```tsx
+[username].github.io
+```
+
+**Sample:**
+
+- San103.github.io
+
+### 2. Create Next.js project
+
+Refer to official documentation of the Next js https://nextjs.org/docs/app/getting-started/installation
+
+```
+pnpm create next-app@latest my-app --yes
+cd my-app
+pnpm dev
+```
+### 3. Install "gh-pages" package for github
+
+Bootstrap components built for React, providing familiar Bootstrap styling with React functionality.
+
+```
+pnpm install gh-pages
+```
+
+### 4. Edit your next.config.js file
+
+Don't ask more questions just edit your fckin file.
+
+```tsx
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    output: 'export', // Enable static export
+    images: {
+      unoptimized: true, // Use this if your project includes images
+    },
+};
+
+export default nextConfig;
+
+```
+### 5. Edit your package.json
+
+add this to your file.
+
+```tsx
+ "name": "coffeewithsan", // name of your project can be anything 
+  "homepage": "https://san103.github.io", // name of your created repository
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "next build && touch .nojekyll && gh-pages -d out"
+  },
+...
+```
+**important notice:**
+
+- make sure your terminal does support **"touch"** command before running **"pnpm run deploy"**
+- or you can manually create .nojekyll file instead
+
+
+## Push to Github
+
+- **push your project to github** 
+
+## Final Step
+
+1. **pnpm run build**
+2. **pnpm run deploy**
+3. **on your repository**: go to settings ; select Page and in Source.. select Deploy from a branch and select **gh-pages** in the selection
+4. and your done **Congrats mf** 
+
+## Conclusion
+
+Changes doesnt effect instantly, wait for a few seconds or even minutes to take effect and visit your page through **"https://[username].github.io"**
