@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site";
 import { metadataKeywords } from "./metadata";
 import { SiteNav } from "@/components/site-nav";
 import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/next";
 import "@/app/globals.css";
 
 export const viewport: Viewport = {
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,  
+    template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: metadataKeywords,
@@ -42,6 +43,7 @@ export default function RootLayout({
         >
           <SiteNav />
           {children}
+          <Analytics />
           <Footer />
         </ThemeProvider>
       </body>
