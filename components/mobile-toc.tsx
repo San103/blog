@@ -2,9 +2,8 @@
 
 import React from "react";
 import { List } from "lucide-react";
-import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter } from "@/components/ui/drawer";
+import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerBody } from "@/components/ui/drawer";
 import { TableOfContents } from "@/components/table-of-contents";
-import { PromoContent } from "@/components/promo-content";
 
 export function MobileTableOfContents() {
   return (
